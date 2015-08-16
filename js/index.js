@@ -73,6 +73,8 @@ var EventUntil = {
 	    	// })
             //失败了，问了下度娘：准确的说 getElementsByTagName返回的也是节点列表类型 NodeList对象，非数组对象，但是会随着节点的改变而更新。之前就这么觉得，不过当时只是以为document.querySelector才会这样，没试过
             //在JS中getElementsByTagName()获得的是一个类似于数组的NodeList对象，但除了有个length属性和下标取值以外再也没有别的数组方法了，因为他不是一个真正的数组对象。
+            //通过函数的call方法，可以用slice方法将类似数组的对象，变成真正的数组
+	        //var arr = Array.prototype.slice.call(arguments);
 	    	for (var i = 0; i < inputs.length; i++) {
 	    		if (inputs[i].value === "全选") {
 	    			chooseAll = inputs[i];

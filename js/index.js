@@ -75,6 +75,18 @@ var EventUntil = {
             //在JS中getElementsByTagName()获得的是一个类似于数组的NodeList对象，但除了有个length属性和下标取值以外再也没有别的数组方法了，因为他不是一个真正的数组对象。
             //通过函数的call方法，可以用slice方法将类似数组的对象，变成真正的数组
 	        //var arr = Array.prototype.slice.call(arguments);
+	        // var toArray = function(s){
+            //         try{
+            //             return Array.prototype.slice.call(s);
+            //         } catch(e){
+            //                 var arr = [];
+            //                 for(var i = 0,len = s.length; i < len; i++){
+            //                     //arr.push(s[i]);
+            //                     arr[i] = s[i];  //据说这样比push快
+            //                 }
+            //                  return arr;
+            //         }
+            //    }
 	    	for (var i = 0; i < inputs.length; i++) {
 	    		if (inputs[i].value === "全选") {
 	    			chooseAll = inputs[i];
